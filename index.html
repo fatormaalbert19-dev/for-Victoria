@@ -1,8 +1,8 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>For Victoria 💗</title>
 
   <style>
@@ -12,251 +12,119 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg, #ffe6ef, #ffffff);
-      color:#1b1b1b;
-      overflow:hidden;
-      padding: 18px 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:#ff6fae;
+      color:#ffffff;
+      padding:20px;
+      box-sizing:border-box;
     }
 
-    .card{
-      width:min(820px, 94vw);
-      background: rgba(255,255,255,.93);
-      border-radius: 26px;
-      padding: 34px;
-      box-shadow: 0 30px 70px rgba(0,0,0,.15);
+    .box{
+      max-width:420px;
+      width:100%;
+      background: rgba(255,255,255,0.12);
+      border-radius:20px;
+      padding:24px;
       text-align:center;
-      animation: fadeIn 1.1s ease;
-      position: relative;
-      z-index: 2;
     }
 
-    .heart{ font-size: 26px; margin-bottom: 6px; }
-    h1{ margin: 6px 0 10px; font-size: clamp(28px, 4vw, 44px); }
-    .subtitle{ margin: 0 auto 18px; opacity:.75; font-size: 14px; }
+    h1{
+      margin:0 0 12px;
+      font-size:28px;
+    }
 
     p{
-      margin: 12px auto;
-      line-height: 1.85;
-      font-size: 18px;
-      max-width: 66ch;
-    }
-
-    .line{
-      font-weight: 650;
-      margin-top: 16px;
+      font-size:17px;
+      line-height:1.6;
+      margin:12px 0;
     }
 
     .question{
-      margin-top: 24px;
-      font-size: 24px;
-      font-weight: 700;
+      margin-top:20px;
+      font-size:20px;
+      font-weight:600;
     }
 
-    .btns{
-      margin-top: 20px;
+    .buttons{
+      margin-top:20px;
       display:flex;
-      gap: 14px;
-      justify-content:center;
-      flex-wrap:wrap;
-      position: relative;
+      flex-direction:column;
+      gap:12px;
     }
 
     button{
+      padding:14px;
+      font-size:16px;
       border:none;
+      border-radius:14px;
+      font-weight:600;
       cursor:pointer;
-      padding: 14px 22px;
-      border-radius: 18px;
-      font-size: 16px;
-      font-weight: 650;
-      transition: transform .15s ease, box-shadow .2s ease;
-      user-select:none;
-      -webkit-tap-highlight-color: transparent;
     }
 
     .yes{
-      background:#ff3b7a;
-      color:#fff;
-      box-shadow: 0 14px 34px rgba(255,59,122,.35);
-    }
-    .yes:hover{ transform: translateY(-2px); box-shadow: 0 20px 44px rgba(255,59,122,.45); }
-
-    .slow{
-      background:#f2f2f4;
-      color:#222;
-    }
-    .slow:hover{ transform: translateY(-1px); }
-
-    .music{
-      background:#111;
-      color:#fff;
-      opacity:.92;
-    }
-    .music:hover{ transform: translateY(-1px); }
-
-    .footer{ margin-top: 18px; font-size: 14px; opacity:.75; }
-
-    .valentine{
-      display:none;
-      animation: fadeIn 1s ease;
+      background:#ffffff;
+      color:#ff2f86;
     }
 
-    .reply{
-      margin-top: 16px;
-      font-weight: 650;
-      min-height: 28px;
+    .wait{
+      background:rgba(255,255,255,0.85);
+      color:#ff2f86;
     }
 
-    .floating-heart{
-      position:absolute;
-      bottom:-40px;
-      font-size: 20px;
-      animation: floatUp 6s linear infinite;
-      opacity: 0.65;
-      z-index: 1;
-      pointer-events:none;
-    }
-
-    @keyframes fadeIn{
-      from{ opacity:0; transform: translateY(12px); }
-      to{ opacity:1; transform: translateY(0); }
-    }
-
-    @keyframes floatUp{
-      from{ transform: translateY(0); opacity:.65; }
-      to{ transform: translateY(-110vh); opacity:0; }
+    .footer{
+      margin-top:16px;
+      font-size:13px;
+      opacity:0.85;
     }
   </style>
 </head>
 
 <body>
-  <audio id="bgm" loop preload="auto">
-    <source src="https://cdn.pixabay.com/audio/2022/10/16/audio_7c5c6cfa42.mp3" type="audio/mpeg">
-  </audio>
-
-  <div class="card" id="mainCard">
-    <div class="heart">💗</div>
-    <h1>Victoria Itua</h1>
-    <div class="subtitle">A small message from Jamal</div>
+  <div class="box">
+    <h1>Victoria 💗</h1>
 
     <p>
-      I no even know how to explain am well, but since you came into my life,
-      something just changed. My days feel softer. My mind dey calm. And after we talk,
-      I dey smile like person wey win something.
+      I just want make this short and honest.
+      Since you enter my life, things don feel different in a good way.
     </p>
 
     <p>
-      Those long phone calls with you, the way you listen, the way you laugh.
-      E be like say my heart don recognize you. And I can’t pretend like it’s small.
-      Na you dey make my world feel more complete.
-    </p>
-
-    <p class="line">
-      Victoria, I respect you. I respect the way you want to take things slow.
-      No pressure, no rush. But I also know say what we feel no fit hide forever.
+      I enjoy talking to you. I enjoy your presence.
+      You make me smile without trying.
     </p>
 
     <p>
-      In Yoruba, I go talk am like this:
-      <br><strong>Mo nifẹ rẹ</strong> (I love you).
-      <br><strong>Okan mi yan si e</strong> (my heart leans toward you).
-      <br><strong>Iwo ni ayanfe mi</strong> (you are my chosen one).
+      No pressure at all.
+      I just want you to know say how I feel about yu is real.
     </p>
 
     <p>
-      Na season of love be this, and e go sweet me well well to say this with my full chest:
-      I want you to be my girlfriend. I want to do this properly. I want to love you with intention.
+      <strong>Mo nife re.</strong><br>
+      (I love you.)
     </p>
 
     <div class="question">
-      Victoria, will you be my girlfriend… and will you be my Valentine? 💕
+      Will you be my girlfriend?
     </div>
 
-    <div class="btns">
-      <button class="music" onclick="playMusic()">Play music 🎶</button>
-      <button class="yes" onclick="acceptLove()">Yes 💖</button>
-      <button class="slow" id="slowBtn">Take it slow 💭</button>
+    <div class="buttons">
+      <button class="yes" onclick="sayYes()">Yes 💖</button>
+      <button class="wait" onclick="wait()">Let’s take it slow 💭</button>
     </div>
 
-    <div class="reply" id="reply"></div>
-
-    <div class="footer">With all my heart, Jamal</div>
-  </div>
-
-  <div class="card valentine" id="valentineCard">
-    <div class="heart">💘</div>
-    <h1>You said yes</h1>
-
-    <p>
-      You just made my heart full. Thank you for choosing me.
-      I promise to treat you gently, love you loudly when it matters, and protect your peace.
-    </p>
-
-    <p>
-      Happy Valentine’s, my love.
-      <br><strong>Mo dupe, ayanfe mi</strong> (thank you, my love).
-    </p>
-
-    <div class="footer">Forever yours, Jamal</div>
+    <div class="footer">
+      From Jamal
+    </div>
   </div>
 
   <script>
-    const audio = document.getElementById("bgm");
-    const reply = document.getElementById("reply");
-    const slowBtn = document.getElementById("slowBtn");
-
-    function playMusic(){
-      audio.play().then(() => {
-        reply.textContent = "Music is playing 🎶";
-        setTimeout(() => reply.textContent = "", 1800);
-      }).catch(() => {
-        reply.textContent = "Tap again if it didn’t start. Some phones need a second tap.";
-        setTimeout(() => reply.textContent = "", 2600);
-      });
-    }
-
-    // Playful tease: button shifts slightly on hover/touch, but still clickable.
-    function nudgeButton(){
-      const x = Math.floor(Math.random() * 120) - 60;
-      const y = Math.floor(Math.random() * 60) - 30;
-      slowBtn.style.transform = `translate(${x}px, ${y}px)`;
-      setTimeout(() => slowBtn.style.transform = "translate(0,0)", 500);
-    }
-
-    ["mouseenter","touchstart","pointerdown","focus"].forEach(evt => {
-      slowBtn.addEventListener(evt, () => nudgeButton(), { passive: true });
-    });
-
-    slowBtn.addEventListener("click", () => {
-      // This keeps it respectful, and also lets you know where her head is.
-      reply.textContent = "That’s okay, my love. We go take am gently. I’m here, I’m patient, and I’m serious about you 💗";
-      startHearts(14);
-    });
-
-    function acceptLove(){
-      // Start music reliably on the YES click
-      audio.play().catch(() => {});
-
-      document.getElementById("mainCard").style.display = "none";
-      document.getElementById("valentineCard").style.display = "block";
-      startHearts(30);
-
-      // Prefill a YES text message (works best on phones)
-      const msg = encodeURIComponent("Yes Jamal 💖 I’ll be your girlfriend and your Valentine. Mo nifẹ rẹ.");
+    function sayYes(){
+      const msg = encodeURIComponent("Yes Jamal 💖");
       window.location.href = "sms:?&body=" + msg;
     }
 
-    function startHearts(count){
-      for(let i=0;i<count;i++){
-        const heart = document.createElement("div");
-        heart.className = "floating-heart";
-        heart.textContent = "💗";
-        heart.style.left = Math.random()*100 + "vw";
-        heart.style.animationDuration = (4 + Math.random()*3) + "s";
-        heart.style.fontSize = (16 + Math.random()*12) + "px";
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 7000);
-      }
+    function wait(){
+      alert("That’s okay. No rush. I’m here 💗");
     }
   </script>
 </body>
