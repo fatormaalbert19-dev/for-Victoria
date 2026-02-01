@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For Victoria 💗</title>
+  <style>
+    body{
+      margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(circle at top, #ffe6ef, #fff);
+      color:#1b1b1b;
+    }
+    .card{
+      width:min(680px, 92vw);
+      background: rgba(255,255,255,.8);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.12);
+      text-align:center;
+    }
+    h1{ margin:0 0 10px; font-size: clamp(26px, 4vw, 40px); }
+    p{ margin: 10px auto; line-height: 1.6; font-size: 18px; max-width: 55ch; }
+    .btns{ margin-top: 18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    button{
+      border:0; cursor:pointer; padding: 12px 18px; border-radius: 14px;
+      font-size: 16px; font-weight: 600;
+      transition: transform .1s ease, box-shadow .2s ease;
+    }
+    .yes{ background:#ff3b7a; color:white; box-shadow: 0 10px 24px rgba(255,59,122,.28); }
+    .yes:hover{ transform: translateY(-1px); box-shadow: 0 14px 32px rgba(255,59,122,.35); }
+    .later{ background:#f2f2f4; color:#222; }
+    .later:hover{ transform: translateY(-1px); }
+    .footer{ margin-top:16px; font-size: 13px; opacity:.7; }
+    .heart{ font-size: 22px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart">💗</div>
+    <h1>Victoria Itua</h1>
+
+    <p>
+      I’ve been thinking about you a lot, and I realized something simple but true.
+      You make my days softer, my smiles easier, and my heart calmer.
+    </p>
+
+    <p>
+      The way you laugh, the way you care, the way you exist so naturally in my thoughts.
+      It feels right. It feels warm. It feels like something I don’t want to ignore.
+    </p>
+
+    <p>
+      So instead of overthinking it, I just want to be honest with you.
+    </p>
+
+    <h2 style="margin:14px 0 6px;">Victoria, will you be my girlfriend?</h2>
+
+    <div class="btns">
+      <button class="yes" onclick="sayYes()">Yes 💕</button>
+      <button class="later" id="noBtn" onmouseover="dodgeNo()">Let me think 😅</button>
+    </div>
+
+    <p id="reply" style="margin-top:16px; font-weight:600;"></p>
+    <div class="footer">Always yours, Jamal</div>
+  </div>
+
+  <script>
+    function sayYes(){
+      const msg = "You just made me really happy 💖 I can’t wait to do this with you. Text me and say yes.";
+      document.getElementById("reply").textContent = msg;
+    }
+    function dodgeNo(){
+      const btn = document.getElementById("noBtn");
+      const x = Math.floor(Math.random() * 220) - 110;
+      const y = Math.floor(Math.random() * 120) - 60;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+</body>
+</html>
