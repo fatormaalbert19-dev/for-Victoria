@@ -178,32 +178,42 @@
   </div>
 
   <script>
-    const audio = document.getElementById("bgm");
+   <script>
+  const audio = document.getElementById("bgm");
 
-    document.body.addEventListener("click", () => {
-      audio.play().catch(() => {});
-    }, { once: true });
+  function acceptLove() {
+    // Play music safely after user interaction
+    audio.play().catch(() => {});
 
-    function acceptLove() {
-      document.getElementById("mainCard").style.display = "none";
-      document.getElementById("valentineCard").style.display = "block";
-      startHearts();
+    // Switch cards
+    document.getElementById("mainCard").style.display = "none";
+    document.getElementById("valentineCard").style.display = "block";
+
+    startHearts();
+
+    // Open text message so you KNOW she said yes
+    const message = encodeURIComponent(
+      "Yes Jamal 💖 I’ll be your Valentine."
+    );
+    window.location.href = "sms:?&body=" + message;
+  }
+
+  function slow() {
+    alert("That’s okay. I’m here, patient and certain about you 💗");
+  }
+
+  function startHearts() {
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement("div");
+      heart.className = "floating-heart";
+      heart.textContent = "💗";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
     }
+  }
+</script>
 
-    function slow() {
-      alert("That’s okay. I’m here, patient and certain about you 💗");
-    }
-
-    function startHearts() {
-      for (let i = 0; i < 25; i++) {
-        const heart = document.createElement("div");
-        heart.className = "floating-heart";
-        heart.textContent = "💗";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (4 + Math.random() * 3) + "s";
-        document.body.appendChild(heart);
-      }
-    }
-  </script>
 </body>
 </html>
+
