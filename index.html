@@ -2,79 +2,207 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>For Victoria 💗</title>
+
   <style>
-    body{
-      margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(circle at top, #ffe6ef, #fff);
-      color:#1b1b1b;
+      background: linear-gradient(180deg, #ffe6ef, #ffffff);
+      color: #1b1b1b;
+      overflow: hidden;
     }
-    .card{
-      width:min(680px, 92vw);
-      background: rgba(255,255,255,.8);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 20px 50px rgba(0,0,0,.12);
-      text-align:center;
+
+    .card {
+      width: min(760px, 94vw);
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 26px;
+      padding: 36px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+      text-align: center;
+      animation: fadeIn 1.2s ease;
     }
-    h1{ margin:0 0 10px; font-size: clamp(26px, 4vw, 40px); }
-    p{ margin: 10px auto; line-height: 1.6; font-size: 18px; max-width: 55ch; }
-    .btns{ margin-top: 18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-    button{
-      border:0; cursor:pointer; padding: 12px 18px; border-radius: 14px;
-      font-size: 16px; font-weight: 600;
-      transition: transform .1s ease, box-shadow .2s ease;
+
+    h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 14px;
     }
-    .yes{ background:#ff3b7a; color:white; box-shadow: 0 10px 24px rgba(255,59,122,.28); }
-    .yes:hover{ transform: translateY(-1px); box-shadow: 0 14px 32px rgba(255,59,122,.35); }
-    .later{ background:#f2f2f4; color:#222; }
-    .later:hover{ transform: translateY(-1px); }
-    .footer{ margin-top:16px; font-size: 13px; opacity:.7; }
-    .heart{ font-size: 22px; }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 62ch;
+      margin: 14px auto;
+    }
+
+    .question {
+      margin-top: 26px;
+      font-size: 24px;
+      font-weight: 650;
+    }
+
+    .btns {
+      margin-top: 24px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      padding: 14px 24px;
+      border-radius: 18px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .2s ease;
+    }
+
+    .yes {
+      background: #ff3b7a;
+      color: #fff;
+      box-shadow: 0 14px 34px rgba(255,59,122,.35);
+    }
+
+    .yes:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 44px rgba(255,59,122,.45);
+    }
+
+    .later {
+      background: #f2f2f4;
+      color: #222;
+    }
+
+    .footer {
+      margin-top: 22px;
+      font-size: 14px;
+      opacity: .75;
+    }
+
+    .heart {
+      font-size: 26px;
+      margin-bottom: 6px;
+    }
+
+    .valentine {
+      display: none;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .floating-heart {
+      position: absolute;
+      bottom: -40px;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: .6; }
+      to { transform: translateY(-110vh); opacity: 0; }
+    }
   </style>
 </head>
+
 <body>
-  <div class="card">
+  <audio id="bgm" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/10/16/audio_7c5c6cfa42.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card" id="mainCard">
     <div class="heart">💗</div>
     <h1>Victoria Itua</h1>
 
     <p>
-      I’ve been thinking about you a lot, and I realized something simple but true.
-      You make my days softer, my smiles easier, and my heart calmer.
+      From the moment you came into my life, everything began to feel softer.
+      Talking to you for hours never feels like time wasted.
+      It feels like home finding me slowly.
     </p>
 
     <p>
-      The way you laugh, the way you care, the way you exist so naturally in my thoughts.
-      It feels right. It feels warm. It feels like something I don’t want to ignore.
+      I know you believe in taking things gently, and I respect that.
+      But what we share has grown beyond quiet feelings.
+      The long calls, the laughter, the comfort.
+      What we feel can’t hide anymore.
     </p>
 
     <p>
-      So instead of overthinking it, I just want to be honest with you.
+      This season feels like love.
+      And loving you honestly feels like the right thing to do.
+      I don’t want to rush you.
+      I just want to choose you.
     </p>
 
-    <h2 style="margin:14px 0 6px;">Victoria, will you be my girlfriend?</h2>
+    <p>
+      I can’t wait for the day I finally get to call you mine.
+    </p>
 
-    <div class="btns">
-      <button class="yes" onclick="sayYes()">Yes 💕</button>
-      <button class="later" id="noBtn" onmouseover="dodgeNo()">Let me think 😅</button>
+    <div class="question">
+      Victoria, will you be my girlfriend…  
+      and will you be my Valentine? 💕
     </div>
 
-    <p id="reply" style="margin-top:16px; font-weight:600;"></p>
-    <div class="footer">Always yours, Jamal</div>
+    <div class="btns">
+      <button class="yes" onclick="acceptLove()">Yes 💖</button>
+      <button class="later" onclick="slow()">Take it slow 💭</button>
+    </div>
+
+    <div class="footer">
+      With all my heart, Jamal
+    </div>
+  </div>
+
+  <div class="card valentine" id="valentineCard">
+    <h1>You said yes 💘</h1>
+    <p>
+      I’m smiling harder than I can explain.
+      Thank you for choosing me, for trusting me,
+      and for letting love find us in its own time.
+    </p>
+    <p>
+      Happy Valentine’s, my love 💗
+    </p>
+    <div class="footer">Forever yours, Jamal</div>
   </div>
 
   <script>
-    function sayYes(){
-      const msg = "You just made me really happy 💖 I can’t wait to do this with you. Text me and say yes.";
-      document.getElementById("reply").textContent = msg;
+    const audio = document.getElementById("bgm");
+
+    document.body.addEventListener("click", () => {
+      audio.play().catch(() => {});
+    }, { once: true });
+
+    function acceptLove() {
+      document.getElementById("mainCard").style.display = "none";
+      document.getElementById("valentineCard").style.display = "block";
+      startHearts();
     }
-    function dodgeNo(){
-      const btn = document.getElementById("noBtn");
-      const x = Math.floor(Math.random() * 220) - 110;
-      const y = Math.floor(Math.random() * 120) - 60;
-      btn.style.transform = `translate(${x}px, ${y}px)`;
+
+    function slow() {
+      alert("That’s okay. I’m here, patient and certain about you 💗");
+    }
+
+    function startHearts() {
+      for (let i = 0; i < 25; i++) {
+        const heart = document.createElement("div");
+        heart.className = "floating-heart";
+        heart.textContent = "💗";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+        document.body.appendChild(heart);
+      }
     }
   </script>
 </body>
