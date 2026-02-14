@@ -2,172 +2,299 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>For Grace 💗</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      background: linear-gradient(135deg, #ffe6ee, #ffd6e4, #fff0f6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Inter', sans-serif;
-      color: #4a1c2a;
-      position: relative;
+    :root{
+      --pink1:#fff0f6;
+      --pink2:#ffe3ee;
+      --pink3:#ffd3e3;
+      --ink:#4a1c2a;
+      --btn:#ff5c93;
+      --btn2:#ff3f82;
+      --glass: rgba(255,255,255,.60);
+      --glass2: rgba(255,255,255,.72);
     }
 
-    .card {
-      max-width: 760px;
-      padding: 56px;
-      background: rgba(255, 255, 255, 0.68);
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      min-height:100svh;
+      padding: env(safe-area-inset-top) 14px env(safe-area-inset-bottom) 14px;
+      background: radial-gradient(1200px 700px at 20% 10%, var(--pink1), transparent 60%),
+                  radial-gradient(1000px 650px at 80% 20%, var(--pink2), transparent 55%),
+                  linear-gradient(135deg, var(--pink1), var(--pink3));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      overflow:hidden;
+    }
+
+    /* Hearts layer ABOVE everything (over the text) */
+    .hearts{
+      position:fixed;
+      inset:0;
+      z-index: 999;
+      pointer-events:none;
+      overflow:hidden;
+    }
+
+    .heart{
+      position:absolute;
+      left: -10vw;
+      top: 0;
+      opacity: .55;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,.08));
+      will-change: transform, opacity;
+      animation: drift linear forwards;
+      user-select:none;
+    }
+
+    @keyframes drift{
+      0%   { transform: translate(-10vw, 110vh) rotate(0deg) scale(1); opacity: .15; }
+      10%  { opacity: .55; }
+      100% { transform: translate(120vw, -20vh) rotate(360deg) scale(1.25); opacity: .0; }
+    }
+
+    .wrap{
+      width:100%;
+      max-width: 720px;
+      position:relative;
+      z-index: 10;
+      display:flex;
+      justify-content:center;
+    }
+
+    .card{
+      width:100%;
       border-radius: 26px;
+      padding: 22px 18px;
+      background: var(--glass);
       backdrop-filter: blur(12px);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
-      text-align: center;
-      position: relative;
-      z-index: 2;
+      box-shadow: 0 22px 70px rgba(0,0,0,.15);
+      border: 1px solid rgba(255,255,255,.5);
     }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.1rem;
-      margin: 0 0 8px 0;
+    /* iPhone friendly spacing */
+    @media (min-width: 420px){
+      .card{ padding: 34px 30px; }
     }
 
-    h2 {
-      margin: 0 0 34px 0;
+    .title{
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.1rem, 7vw, 3.1rem);
+      margin: 4px 0 6px 0;
+      letter-spacing: .2px;
+      text-align:center;
+    }
+
+    .subtitle{
+      text-align:center;
+      margin: 0 0 18px 0;
       font-weight: 400;
-      font-size: 1.2rem;
-      opacity: 0.9;
+      opacity: .9;
+      font-size: 1.05rem;
     }
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.95;
-      margin-bottom: 20px;
+    .msg{
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin: 0 0 14px 0;
+      text-align:center;
     }
 
-    .heart {
-      font-size: 2.8rem;
-      margin: 24px 0;
-      animation: pulse 1.8s infinite;
+    .bigHeart{
+      text-align:center;
+      font-size: 2.5rem;
+      margin: 14px 0 14px 0;
+      animation: pulse 1.8s ease-in-out infinite;
     }
 
-    @keyframes pulse {
+    @keyframes pulse{
       0% { transform: scale(1); }
       50% { transform: scale(1.12); }
       100% { transform: scale(1); }
     }
 
-    .signature {
-      margin-top: 28px;
-      font-size: 1.05rem;
-      opacity: 0.9;
-    }
-
-    .footer {
+    .btnRow{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      justify-content:center;
       margin-top: 18px;
-      font-size: 1rem;
-      font-style: italic;
-      min-height: 28px;
     }
 
-    button {
-      margin-top: 26px;
-      padding: 14px 30px;
+    button{
+      border:none;
       border-radius: 999px;
-      border: none;
-      background: #ff6f9f;
-      color: white;
+      padding: 12px 18px;
       font-size: 1rem;
-      cursor: pointer;
+      font-weight: 600;
+      cursor:pointer;
+      background: var(--btn);
+      color:white;
+      box-shadow: 0 12px 28px rgba(255,92,147,.28);
+      transition: transform .15s ease, background .15s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    /* Floating hearts */
-    .hearts {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      z-index: 1;
-      pointer-events: none;
+    button:active{
+      transform: translateY(1px);
+      background: var(--btn2);
     }
 
-    .heartFloat {
-      position: absolute;
-      bottom: -60px;
-      font-size: 22px;
-      opacity: 0.75;
-      animation: floatUp linear infinite;
+    .ghost{
+      background: rgba(255,92,147,.16);
+      color: #7a1f38;
+      box-shadow:none;
+      border: 1px solid rgba(255,92,147,.35);
+      font-weight: 600;
     }
 
-    @keyframes floatUp {
-      from { transform: translateY(0); }
-      to { transform: translateY(-120vh); }
+    .extra{
+      min-height: 28px;
+      margin-top: 14px;
+      text-align:center;
+      font-style: italic;
+      opacity: .95;
+    }
+
+    .sign{
+      margin-top: 18px;
+      text-align:center;
+      font-size: 1.02rem;
+      opacity:.95;
+    }
+
+    .smallNote{
+      margin-top: 10px;
+      text-align:center;
+      font-size: .9rem;
+      opacity: .75;
     }
   </style>
 </head>
 
 <body>
-  <div class="hearts" id="heartsLayer"></div>
+  <!-- Hearts fly over everything -->
+  <div class="hearts" id="hearts"></div>
 
-  <div class="card">
-    <h1>Grace</h1>
-    <h2>My Valentine 💕</h2>
+  <div class="wrap">
+    <div class="card">
+      <div class="title">Grace</div>
+      <div class="subtitle">My Valentine 💕</div>
 
-    <p>
-      I just want you to know how grateful I am for you. Thank you for being steady, loving, and patient with me, even when I’m not always there physically.
-    </p>
+      <p class="msg">
+        I just want you to know I appreciate you so much. Thank you for staying with me, loving me, and being patient with me, even when I’m not always there physically.
+      </p>
 
-    <p>
-      Distance doesn’t change how I feel about you. You show up for us in ways that make everything feel lighter, and I carry that with me wherever I go.
-    </p>
+      <p class="msg">
+        You make distance feel smaller. You make my days softer. And you remind me what real love looks like, calm, loyal, and sweet.
+      </p>
 
-    <p>
-      You are appreciated, valued, and deeply loved. Always.
-    </p>
+      <p class="msg">
+        I don’t take you for granted. Not for a second. I’m thankful it’s you, and I’m grateful for us.
+      </p>
 
-    <div class="heart">💗</div>
+      <div class="bigHeart">💗</div>
 
-    <p>
-      Here’s to this Valentine’s Day, and to many more Valentine celebrations together. No matter the distance or the season, I’m choosing you.
-    </p>
+      <p class="msg">
+        Here’s to this Valentine’s Day, and to many more Valentine celebrations together. No matter what life looks like, I want you right beside me.
+      </p>
 
-    <button onclick="showMessage()">Tap Me</button>
+      <div class="btnRow">
+        <button onclick="showMessage()">Tap Me</button>
+        <button class="ghost" onclick="toggleMusic()" id="musicBtn">Play Music 🎶</button>
+      </div>
 
-    <div class="footer" id="extraMessage"></div>
+      <div class="extra" id="extra"></div>
 
-    <div class="signature">
-      With love,<br />
-      <strong>BATO</strong>
+      <div class="sign">
+        With love,<br />
+        <strong>BATO</strong>
+      </div>
+
+      <div class="smallNote">
+        If music doesn’t start, tap “Play Music” once. iPhone blocks autoplay sometimes.
+      </div>
     </div>
   </div>
 
-  <audio id="bgMusic" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9e7d3e2f89.mp3" type="audio/mpeg">
+  <!-- Music -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9e7d3e2f89.mp3?filename=romantic-piano-112191.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    function showMessage() {
-      document.getElementById("extraMessage").innerText =
-        "You’re loved more than you know, missed more than I show, and cherished always. Happy Valentine’s Day, Grace 💗";
+    function showMessage(){
+      document.getElementById("extra").innerText =
+        "You are my favorite kind of love, soft, real, and safe. Happy Valentine’s Day, Grace 💗";
     }
 
-    const heartsLayer = document.getElementById("heartsLayer");
-    const hearts = ["💗","💖","💕","💞","💓"];
+    // Music toggle
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
 
-    setInterval(() => {
-      const h = document.createElement("div");
-      h.className = "heartFloat";
-      h.textContent = hearts[Math.floor(Math.random()*hearts.length)];
-      h.style.left = Math.random()*100 + "vw";
-      h.style.fontSize = 18 + Math.random()*22 + "px";
-      h.style.animationDuration = 7 + Math.random()*8 + "s";
-      heartsLayer.appendChild(h);
-      setTimeout(() => h.remove(), 15000);
-    }, 450);
+    async function toggleMusic(){
+      try{
+        if(music.paused){
+          music.volume = 0.35;
+          await music.play();
+          musicBtn.textContent = "Pause Music 🔇";
+        } else {
+          music.pause();
+          musicBtn.textContent = "Play Music 🎶";
+        }
+      } catch(e){
+        musicBtn.textContent = "Tap Again 🎶";
+      }
+    }
+
+    // Hearts over text: diagonal drift across the screen
+    const layer = document.getElementById("hearts");
+    const symbols = ["💗","💖","💕","💞","💓","❤️"];
+    const MAX_HEARTS = 28; // keeps it smooth on iPhone
+
+    function spawnHeart(){
+      if(layer.childElementCount > MAX_HEARTS) return;
+
+      const el = document.createElement("div");
+      el.className = "heart";
+      el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+
+      const size = 14 + Math.random()*30;         // px
+      const duration = 6 + Math.random()*8;       // seconds
+      const startY = Math.random()*110;           // vh
+      const rotate = Math.floor(Math.random()*360);
+
+      el.style.fontSize = size + "px";
+      el.style.top = startY + "vh";
+      el.style.animationDuration = duration + "s";
+      el.style.transform = `translate(-10vw, 110vh) rotate(${rotate}deg)`;
+
+      layer.appendChild(el);
+
+      setTimeout(() => el.remove(), duration * 1000);
+    }
+
+    // steady flow that still looks “all over the text”
+    setInterval(spawnHeart, 280);
+
+    // Try to start music after first user interaction anywhere
+    document.addEventListener("click", async () => {
+      if(music.paused){
+        try{
+          music.volume = 0.35;
+          await music.play();
+          musicBtn.textContent = "Pause Music 🔇";
+        } catch(e){}
+      }
+    }, { once: true });
   </script>
 </body>
 </html>
