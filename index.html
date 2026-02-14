@@ -9,12 +9,11 @@
 
   <style>
     :root{
-      --pinkA:#fff2f7;
-      --pinkB:#ffe0ec;
-      --pinkC:#ffd1e3;
+      --pinkA:#fff4f9;
+      --pinkB:#ffe6f0;
+      --pinkC:#ffd6e8;
       --ink:#4a1c2a;
-      --glass:rgba(255,255,255,.65);
-      --btn:#ff5f98;
+      --glass:rgba(255,255,255,.70);
     }
 
     *{ box-sizing:border-box; }
@@ -22,10 +21,10 @@
     body{
       margin:0;
       min-height:100svh;
-      padding: env(safe-area-inset-top) 14px env(safe-area-inset-bottom) 14px;
+      padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom) 16px;
       background:
-        radial-gradient(900px 600px at 15% 10%, var(--pinkA), transparent 60%),
-        radial-gradient(800px 600px at 85% 20%, var(--pinkB), transparent 55%),
+        radial-gradient(1100px 700px at 18% 12%, var(--pinkA), transparent 60%),
+        radial-gradient(1000px 700px at 82% 18%, var(--pinkB), transparent 55%),
         linear-gradient(135deg, var(--pinkA), var(--pinkC));
       display:flex;
       align-items:center;
@@ -46,21 +45,21 @@
 
     .heart{
       position:absolute;
-      font-size:20px;
       opacity:.55;
       filter: drop-shadow(0 6px 12px rgba(0,0,0,.08));
       animation: float linear forwards;
+      user-select:none;
     }
 
     @keyframes float{
-      from{ transform: translate(-15vw, 110vh) rotate(0deg) scale(1); opacity:.15; }
-      10%{ opacity:.55; }
-      to{ transform: translate(120vw, -20vh) rotate(360deg) scale(1.25); opacity:0; }
+      from{ transform: translate(-15vw, 110vh) rotate(0deg) scale(1); opacity:.12; }
+      12%{ opacity:.55; }
+      to{ transform: translate(120vw, -20vh) rotate(360deg) scale(1.22); opacity:0; }
     }
 
     .wrap{
       width:100%;
-      max-width:720px;
+      max-width: 760px; /* fits iPhone 16 Pro Max comfortably */
       position:relative;
       z-index:10;
     }
@@ -68,39 +67,40 @@
     .card{
       background:var(--glass);
       backdrop-filter: blur(12px);
-      border-radius:26px;
-      padding:22px 18px;
-      box-shadow:0 24px 70px rgba(0,0,0,.16);
-      border:1px solid rgba(255,255,255,.5);
+      border-radius:28px;
+      padding: 26px 20px;
+      box-shadow:0 26px 80px rgba(0,0,0,.14);
+      border:1px solid rgba(255,255,255,.55);
       text-align:center;
     }
 
-    @media (min-width:420px){
-      .card{ padding:34px 30px; }
+    @media (min-width: 430px){
+      .card{ padding: 38px 34px; }
     }
 
     h1{
       font-family:"Playfair Display", serif;
-      font-size: clamp(2.2rem, 7vw, 3.2rem);
-      margin:4px 0 6px 0;
+      font-size: clamp(2.3rem, 6.5vw, 3.3rem);
+      margin: 6px 0 6px 0;
+      letter-spacing:.2px;
     }
 
     h2{
       margin:0 0 18px 0;
       font-weight:400;
-      font-size:1.1rem;
+      font-size:1.12rem;
       opacity:.9;
     }
 
     p{
-      font-size:1.05rem;
-      line-height:1.9;
-      margin:0 0 14px 0;
+      font-size: 1.06rem;
+      line-height: 1.95;
+      margin: 0 0 14px 0;
     }
 
     .bigHeart{
-      font-size:2.6rem;
-      margin:14px 0;
+      font-size: 2.7rem;
+      margin: 16px 0;
       animation:pulse 1.8s ease-in-out infinite;
     }
 
@@ -110,28 +110,10 @@
       100%{ transform:scale(1); }
     }
 
-    .btnRow{
-      display:flex;
-      justify-content:center;
-      margin-top:20px;
-    }
-
-    a.btn{
-      text-decoration:none;
-      border-radius:999px;
-      padding:14px 26px;
-      font-size:1.05rem;
-      font-weight:600;
-      background:var(--btn);
-      color:white;
-      box-shadow:0 14px 28px rgba(255,95,152,.35);
-      -webkit-tap-highlight-color: transparent;
-    }
-
     .sign{
-      margin-top:20px;
-      font-size:1.05rem;
-      opacity:.95;
+      margin-top: 20px;
+      font-size: 1.05rem;
+      opacity: .95;
     }
   </style>
 </head>
@@ -145,30 +127,24 @@
       <h2>My Valentine 💕</h2>
 
       <p>
-        I know it hasn’t been that long, but meeting you has honestly been one of the best things to happen to me.
+        I’m still smiling that I found you. It hasn’t been long, but you already feel like one of the best things that’s ever happened to me.
       </p>
 
       <p>
-        I enjoy our long night talks, the midnight prayers, and even the little headache you give me sometimes.
-        You’re my cute little problem, and I mean that with so much love.
+        I love our long night talks, the quiet moments that turn into laughter, and those midnight prayers that make me feel like we’re covered.
+        Even when you give me that little headache, I can’t help it. You’re my cute little problem, and you’re my favorite.
       </p>
 
       <p>
-        You bring peace, warmth, and happiness into my life in a way I didn’t expect, and I’m grateful for you every day.
+        You make me feel seen. You make love feel soft and safe. You bring warmth into my life in a way I didn’t know I needed.
       </p>
 
       <div class="bigHeart">💗</div>
 
       <p>
-        I want you to know this clearly. You are loved, deeply and genuinely, and you will always be loved by me.
+        I want you to hold this close. You are loved, deeply and genuinely. Not just today, not just when it’s easy, but always.
+        And as long as I’m here, you will forever be loved by me.
       </p>
-
-      <div class="btnRow">
-        <a class="btn"
-           href="sms:+19073709308&body=I%20love%20you%20too%20Jamal%20%F0%9F%8C%B8%F0%9F%AB%B6%F0%9F%8F%BF">
-          Tap to send me an iMessage 💬
-        </a>
-      </div>
 
       <div class="sign">
         With love,<br />
@@ -180,18 +156,28 @@
   <script>
     const layer = document.getElementById("hearts");
     const symbols = ["💗","💖","💕","💞","💓","❤️"];
+    const MAX = 28; // smooth on iPhone 16 Pro Max
 
-    setInterval(()=>{
-      if(layer.childElementCount > 26) return;
+    function spawn(){
+      if(layer.childElementCount > MAX) return;
+
       const h = document.createElement("div");
       h.className = "heart";
       h.textContent = symbols[Math.floor(Math.random()*symbols.length)];
-      h.style.fontSize = (14 + Math.random()*30) + "px";
-      h.style.top = (Math.random()*110) + "vh";
-      h.style.animationDuration = (6 + Math.random()*8) + "s";
+
+      const size = 14 + Math.random()*30;
+      const duration = 6 + Math.random()*8;
+      const startY = Math.random()*110;
+
+      h.style.fontSize = size + "px";
+      h.style.top = startY + "vh";
+      h.style.animationDuration = duration + "s";
+
       layer.appendChild(h);
-      setTimeout(()=>h.remove(), 14000);
-    }, 300);
+      setTimeout(()=>h.remove(), duration*1000);
+    }
+
+    setInterval(spawn, 280);
   </script>
 </body>
 </html>
