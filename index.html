@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Grace 💗</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffe6ee, #ffd6e4, #fff0f6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      color: #4a1c2a;
+      position: relative;
+    }
+
+    .card {
+      max-width: 760px;
+      padding: 56px;
+      background: rgba(255, 255, 255, 0.68);
+      border-radius: 26px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.1rem;
+      margin: 0 0 8px 0;
+    }
+
+    h2 {
+      margin: 0 0 34px 0;
+      font-weight: 400;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.95;
+      margin-bottom: 20px;
+    }
+
+    .heart {
+      font-size: 2.8rem;
+      margin: 24px 0;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+      100% { transform: scale(1); }
+    }
+
+    .signature {
+      margin-top: 28px;
+      font-size: 1.05rem;
+      opacity: 0.9;
+    }
+
+    .footer {
+      margin-top: 18px;
+      font-size: 1rem;
+      font-style: italic;
+      min-height: 28px;
+    }
+
+    button {
+      margin-top: 26px;
+      padding: 14px 30px;
+      border-radius: 999px;
+      border: none;
+      background: #ff6f9f;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* Floating hearts */
+    .hearts {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .heartFloat {
+      position: absolute;
+      bottom: -60px;
+      font-size: 22px;
+      opacity: 0.75;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); }
+      to { transform: translateY(-120vh); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hearts" id="heartsLayer"></div>
+
+  <div class="card">
+    <h1>Grace</h1>
+    <h2>My Valentine 💕</h2>
+
+    <p>
+      I just want you to know how grateful I am for you. Thank you for being steady, loving, and patient with me, even when I’m not always there physically.
+    </p>
+
+    <p>
+      Distance doesn’t change how I feel about you. You show up for us in ways that make everything feel lighter, and I carry that with me wherever I go.
+    </p>
+
+    <p>
+      You are appreciated, valued, and deeply loved. Always.
+    </p>
+
+    <div class="heart">💗</div>
+
+    <p>
+      Here’s to this Valentine’s Day, and to many more Valentine celebrations together. No matter the distance or the season, I’m choosing you.
+    </p>
+
+    <button onclick="showMessage()">Tap Me</button>
+
+    <div class="footer" id="extraMessage"></div>
+
+    <div class="signature">
+      With love,<br />
+      <strong>BATO</strong>
+    </div>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9e7d3e2f89.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function showMessage() {
+      document.getElementById("extraMessage").innerText =
+        "You’re loved more than you know, missed more than I show, and cherished always. Happy Valentine’s Day, Grace 💗";
+    }
+
+    const heartsLayer = document.getElementById("heartsLayer");
+    const hearts = ["💗","💖","💕","💞","💓"];
+
+    setInterval(() => {
+      const h = document.createElement("div");
+      h.className = "heartFloat";
+      h.textContent = hearts[Math.floor(Math.random()*hearts.length)];
+      h.style.left = Math.random()*100 + "vw";
+      h.style.fontSize = 18 + Math.random()*22 + "px";
+      h.style.animationDuration = 7 + Math.random()*8 + "s";
+      heartsLayer.appendChild(h);
+      setTimeout(() => h.remove(), 15000);
+    }, 450);
+  </script>
+</body>
+</html>
